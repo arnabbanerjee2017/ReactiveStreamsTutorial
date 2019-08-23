@@ -1,4 +1,4 @@
-package com.arnab.spring.reactive.api.employee;
+package com.arnab.spring.reactive.api.employee.basics;
 
 import reactor.core.publisher.Flux;
 
@@ -17,8 +17,11 @@ public class Main {
 		// This demonstrates using a map().
 		Flux<String> fluxFromList = Flux.fromIterable(getNamesOfCities());
 		fluxFromList = fluxFromList.delayElements(Duration.ofMillis(100));
+		
 		//fluxFromList = fluxFromList.doOnNext(Main::makeFirstLetterCap); // not working as expected...
+		
 		fluxFromList = fluxFromList.map(Main::makeFirstLetterCap);
+		
 		//fluxFromList = fluxFromList.take(3); // just to take 3 items out of the flux...
 
 		System.out.println("----------------------------------------------------------------------------");

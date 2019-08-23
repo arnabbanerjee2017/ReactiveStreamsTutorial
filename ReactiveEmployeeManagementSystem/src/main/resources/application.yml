@@ -1,0 +1,18 @@
+#
+# Copyright (c) 2019, ARNAB BANERJEE. All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted only for academic purposes.
+# 
+# For further queries / info: arnab.ban09@gmail.com
+#
+
+server:
+  port: 8080
+spring:
+  application:
+    name: ReactiveEmployeeManagementSystem
+  data:    mongodb:
+      database: mydb      uri: mongodb+srv://arnab:arnab@cluster0-itfv3.mongodb.net/test?retryWrites=true&w=majority
+    
+#   mongodb+srv://arnab:<password>@cluster0-itfv3.mongodb.net/test?retryWrites=true&w=majority

@@ -1,21 +1,11 @@
 package com.arnab.spring.reactive.api.employee.repository;
 
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+
 import com.arnab.spring.reactive.api.employee.domain.Employee;
 
-import reactor.core.CoreSubscriber;
-import reactor.core.publisher.Mono;
+import reactor.core.publisher.Flux;
 
-public class EmployeeRepository {
-
-	public Mono<Employee> getEmployeeById(String id) {
-		return new Mono<Employee>() {
-
-			@Override
-			public void subscribe(CoreSubscriber<? super Employee> actual) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
-	}
-	
+public interface EmployeeRepository extends ReactiveMongoRepository<Employee, String> {
+	Flux<Employee> findByName(String name);
 }
